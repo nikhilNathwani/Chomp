@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function Board() {
 	const rows = 4;
 	const columns = 5;
-	let boardTemplate = Array(4).fill(Array(5).fill(false));
+	let boardTemplate = Array(rows).fill(Array(columns).fill(false));
 	let board = boardTemplate.map((row) => (
 		<div className="board-row">
 			{row.map((square) => (
