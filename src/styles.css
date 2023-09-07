@@ -32,3 +32,7 @@ body {
 	border-right-color: hsl(10, 59%, 19%);
 	border-bottom-color: hsl(10, 59%, 19%);
 }
+
+i.fa-skull-crossbones {
+	color: hsl(10, 59%, 9%);
+}

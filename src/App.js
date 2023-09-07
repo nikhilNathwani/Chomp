@@ -25,7 +25,7 @@ export default function Board() {
 function Square({ isChomped, isPoison }) {
 	return (
 		<div className={"square " + (isChomped ? "chomped" : "notChomped")}>
-			{isPoison && "X"}
+			{isPoison && <i class="fa-solid fa-skull-crossbones fa-2xl"></i>}
 		</div>
 	);
 }
