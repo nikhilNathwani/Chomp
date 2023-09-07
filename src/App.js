@@ -9,15 +9,14 @@ export default function Board() {
 	let board = boardTemplate.map((row) => (
 		<div className="board-row">
 			{row.map((square) => (
-				<Square />
+				<Square isChomped={false} />
 			))}
 		</div>
 	));
 	return board;
 }
 
-function Square() {
-	const isChomped = false;
+function Square({ isChomped }) {
 	return (
 		<div className={"square " + (isChomped ? "chomped" : "notChomped")}>
 			Hi
