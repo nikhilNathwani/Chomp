@@ -11,6 +11,8 @@ export default function Board() {
 			{row.map((square, j) => {
 				return (
 					<Square
+						row={i}
+						col={j}
 						isChomped={false}
 						isPoison={i + j == 0}
 						key={j}
@@ -22,9 +24,15 @@ export default function Board() {
 	return board;
 }
 
-function Square({ isChomped, isPoison }) {
+function Square({ row, col, isChomped, isPoison }) {
+	function handleClick() {
+		console.log(`Clicked square at row ${row + 1}, column ${col + 1}`);
+	}
 	return (
-		<div className={"square " + (isChomped ? "chomped" : "notChomped")}>
+		<div
+			className={"square " + (isChomped ? "chomped" : "notChomped")}
+			onClick={handleClick}
+		>
 			{isPoison && <i class="fa-solid fa-skull-crossbones fa-2xl"></i>}
 		</div>
 	);
