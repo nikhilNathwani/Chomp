@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: sans-serif;
+	margin: 80px;
+}
+
+.board-row {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.square {
+	width: 80px;
+	height: 80px;
+	border: 1px solid black;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
