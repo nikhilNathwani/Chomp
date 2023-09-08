@@ -16,6 +16,10 @@ body {
 	flex-flow: row nowrap;
 }
 
+i.fa-skull-crossbones {
+	color: hsl(10, 59%, 9%);
+}
+
 .square {
 	width: 80px;
 	height: 80px;
@@ -33,6 +37,6 @@ body {
 	border-bottom-color: hsl(10, 59%, 19%);
 }
 
-i.fa-skull-crossbones {
-	color: hsl(10, 59%, 9%);
+.chomped {
+	background-color: lemonchiffon;
 }

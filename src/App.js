@@ -1,21 +1,40 @@
 import React from "react";
-
 import { useState } from "react";
 
+//Current goal: put chomped/unchomped state in a Board state var
+
+const numRows = 4;
+const numColumns = 5;
+
 export default function Board() {
-	const rows = 4;
-	const columns = 5;
-	let boardTemplate = Array(rows).fill(Array(columns).fill(false));
-	let board = boardTemplate.map((row, i) => (
+	const [chompedSquares, setChompedSquares] = useState(
+		Array.from({ length: numRows }, () => Array(numColumns).fill(false))
+	);
+
+	function handleChomp(row, col) {
+		let nextChompedSquares = chompedSquares.slice();
+		for (let i = row; i < numRows; i++) {
+			for (let j = col; j < numColumns; j++) {
+				nextChompedSquares[i][j] = true;
+			}
+		}
+		setChompedSquares(nextChompedSquares);
+	}
+
+	let board = chompedSquares.map((row, i) => (
 		<div className="board-row" key={i}>
-			{row.map((square, j) => {
+			{row.map((isChomped, j) => {
 				return (
 					<Square
 						row={i}
 						col={j}
-						isChomped={false}
-						isPoison={i + j == 0}
-						key={j}
+						isChomped={isChomped}
+						isPoison={i + j === 0}
+						onChomp={() => {
+							// console.log(`Clicked square at row ${i + 1}, column ${j + 1}`);
+							handleChomp(i, j);
+						}}
+						key={(i + 1) * 10 + (j + 1)}
 					></Square>
 				);
 			})}
@@ -24,16 +43,18 @@ export default function Board() {
 	return board;
 }
 
-function Square({ row, col, isChomped, isPoison }) {
-	function handleClick() {
-		console.log(`Clicked square at row ${row + 1}, column ${col + 1}`);
-	}
+function Square({ row, col, isChomped, isPoison, onChomp }) {
+	// function handleClick() {
+	// 	console.log(`Clicked square at row ${row + 1}, column ${col + 1}`);
+	// }
 	return (
 		<div
 			className={"square " + (isChomped ? "chomped" : "notChomped")}
-			onClick={handleClick}
+			onClick={onChomp}
 		>
-			{isPoison && <i class="fa-solid fa-skull-crossbones fa-2xl"></i>}
+			{isPoison && (
+				<i className="fa-solid fa-skull-crossbones fa-2xl"></i>
+			)}
 		</div>
 	);
 }
