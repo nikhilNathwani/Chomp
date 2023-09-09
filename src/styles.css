@@ -43,10 +43,17 @@ i.fa-skull-crossbones {
 	visibility: hidden;
 }
 
+.player-one.board-row .square.blast-zone {
+	background-color: hsl(84, 70%, 89%);
+}
 .player-one.board-row .square:hover {
-	background-color: greenyellow;
+	background-color: hsl(84, 100%, 59%);
+}
+
+.player-two.board-row .square.blast-zone {
+	background-color: hsl(240, 80%, 75%);
 }
 
 .player-two.board-row .square:hover {
-	background-color: blue;
+	background-color: hsl(240, 100%, 50%);
 }
