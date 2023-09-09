@@ -42,3 +42,11 @@ i.fa-skull-crossbones {
 	background-color: lemonchiffon;
 	visibility: hidden;
 }
+
+.player-one.board-row .square:hover {
+	background-color: greenyellow;
+}
+
+.player-two.board-row .square:hover {
+	background-color: blue;
+}

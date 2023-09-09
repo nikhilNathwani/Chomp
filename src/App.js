@@ -11,7 +11,7 @@ export default function Level() {
 		Array.from({ length: numRows }, () => Array(numColumns).fill(false))
 	);
 	const [playerOneIsNext, setPlayerOneIsNext] = useState(true);
-	const nextPlayerNumString = playerOneIsNext ? "1" : "2";
+	let nextPlayerNumString = playerOneIsNext ? "1" : "2";
 
 	function handleChomp(row, col) {
 		let nextChompedSquares = chompedSquares.slice();
@@ -43,7 +43,10 @@ export default function Level() {
 
 function Board({ chompedSquares, isPlayerOneNext, onChomp }) {
 	let board = chompedSquares.map((row, i) => (
-		<div className="board-row" key={i}>
+		<div
+			className={"board-row player-" + (isPlayerOneNext ? "one" : "two")}
+			key={i}
+		>
 			{row.map((isChomped, j) => {
 				return (
 					<Square
