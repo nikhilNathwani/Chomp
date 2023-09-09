@@ -9,6 +9,7 @@
 body {
 	font-family: sans-serif;
 	margin: 80px;
+	background-color: hsl(10, 59%, 81%);
 }
 
 .board-row {
@@ -39,4 +40,5 @@ i.fa-skull-crossbones {
 
 .chomped {
 	background-color: lemonchiffon;
+	visibility: hidden;
 }

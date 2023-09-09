@@ -1,15 +1,17 @@
 import React from "react";
 import { useState } from "react";
 
-//Current goal: put chomped/unchomped state in a Board state var
+//Current goal:
 
 const numRows = 4;
 const numColumns = 5;
 
-export default function Board() {
+export default function Level() {
 	const [chompedSquares, setChompedSquares] = useState(
 		Array.from({ length: numRows }, () => Array(numColumns).fill(false))
 	);
+	const [playerOneIsNext, setPlayerOneIsNext] = useState(true);
+	const nextPlayerNumString = playerOneIsNext ? "1" : "2";
 
 	function handleChomp(row, col) {
 		let nextChompedSquares = chompedSquares.slice();
@@ -19,8 +21,27 @@ export default function Board() {
 			}
 		}
 		setChompedSquares(nextChompedSquares);
+		setPlayerOneIsNext(!playerOneIsNext);
 	}
 
+	return (
+		<React.Fragment>
+			<p
+				id="nextTurnIndicator"
+				className={"player" + nextPlayerNumString}
+			>
+				Player {nextPlayerNumString}'s turn
+			</p>
+			<Board
+				chompedSquares={chompedSquares}
+				isPlayerOneNext={playerOneIsNext}
+				onChomp={handleChomp}
+			></Board>
+		</React.Fragment>
+	);
+}
+
+function Board({ chompedSquares, isPlayerOneNext, onChomp }) {
 	let board = chompedSquares.map((row, i) => (
 		<div className="board-row" key={i}>
 			{row.map((isChomped, j) => {
@@ -30,9 +51,9 @@ export default function Board() {
 						col={j}
 						isChomped={isChomped}
 						isPoison={i + j === 0}
-						onChomp={() => {
+						onSquareClick={() => {
 							// console.log(`Clicked square at row ${i + 1}, column ${j + 1}`);
-							handleChomp(i, j);
+							onChomp(i, j);
 						}}
 						key={(i + 1) * 10 + (j + 1)}
 					></Square>
@@ -43,14 +64,11 @@ export default function Board() {
 	return board;
 }
 
-function Square({ row, col, isChomped, isPoison, onChomp }) {
-	// function handleClick() {
-	// 	console.log(`Clicked square at row ${row + 1}, column ${col + 1}`);
-	// }
+function Square({ row, col, isChomped, isPoison, onSquareClick }) {
 	return (
 		<div
 			className={"square " + (isChomped ? "chomped" : "notChomped")}
-			onClick={onChomp}
+			onClick={onSquareClick}
 		>
 			{isPoison && (
 				<i className="fa-solid fa-skull-crossbones fa-2xl"></i>
