@@ -18,7 +18,8 @@ body {
 }
 
 i.fa-skull-crossbones {
-	color: hsl(10, 59%, 9%);
+	color: white;
+	/* color: hsl(10, 59%, 9%); */
 }
 
 .square {
@@ -44,16 +45,16 @@ i.fa-skull-crossbones {
 }
 
 .player-one.board-row .square.blast-zone {
-	background-color: hsl(84, 70%, 89%);
+	background-color: hsl(240, 100%, 70%);
 }
 .player-one.board-row .square:hover {
-	background-color: hsl(84, 100%, 59%);
+	background-color: mediumblue;
 }
 
 .player-two.board-row .square.blast-zone {
-	background-color: hsl(240, 80%, 75%);
+	background-color: hsl(120, 61%, 85%);
 }
 
 .player-two.board-row .square:hover {
-	background-color: hsl(240, 100%, 50%);
+	background-color: limegreen;
 }
