@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 
 //Current goal:
+//- Declare winner
+//- Consider UI showing "Player 1" left-aligned & "Player 2" right-aligned, then toggle the color on/off (and maybe the text) to indicate whose turn it is
 
 const numRows = 4;
 const numColumns = 5;
@@ -69,12 +71,12 @@ export default function Level() {
 
 	return (
 		<React.Fragment>
-			<p
+			<div
 				id="nextTurnIndicator"
 				className={"player" + (playerOneIsNext ? "-one" : "-two")}
 			>
 				Player {playerOneIsNext ? "1" : "2"}'s turn
-			</p>
+			</div>
 			<Board
 				chompedSquares={chompedSquares}
 				isPlayerOneNext={playerOneIsNext}
@@ -144,4 +146,3 @@ function Square({
 		</div>
 	);
 }
-// <i class="fa-solid fa-skull-crossbones"></i>

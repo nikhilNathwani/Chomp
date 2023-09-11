@@ -6,10 +6,33 @@
 	padding: 0;
 }
 
+:root {
+	--player-one-color: mediumblue;
+	--player-one-color-light: hsl(240, 100%, 70%);
+	--player-two-color: hsl(120, 100%, 35%);
+	--player-two-color-light: hsl(120, 61%, 85%);
+}
+
 body {
 	font-family: sans-serif;
 	margin: 80px;
 	background-color: hsl(10, 26%, 86%);
+}
+
+#nextTurnIndicator {
+	width: fit-content;
+	margin-bottom: 0.5rem;
+	padding: 0.5rem;
+	border-top-right-radius: 8px;
+	color: white;
+}
+
+#nextTurnIndicator.player-one {
+	background-color: var(--player-one-color);
+}
+
+#nextTurnIndicator.player-two {
+	background-color: var(--player-two-color);
 }
 
 .board-row {
@@ -40,21 +63,20 @@ i.fa-skull-crossbones {
 }
 
 .chomped {
-	background-color: lemonchiffon;
 	visibility: hidden;
 }
 
 .player-one.board-row .square.blast-zone {
-	background-color: hsl(240, 100%, 70%);
+	background-color: var(--player-one-color-light);
 }
 .player-one.board-row .square:hover {
-	background-color: mediumblue;
+	background-color: var(--player-one-color);
 }
 
 .player-two.board-row .square.blast-zone {
-	background-color: hsl(120, 61%, 85%);
+	background-color: var(--player-two-color-light);
 }
 
 .player-two.board-row .square:hover {
-	background-color: limegreen;
+	background-color: var(--player-two-color);
 }
