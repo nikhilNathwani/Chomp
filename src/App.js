@@ -75,7 +75,8 @@ export default function Level() {
 				id="nextTurnIndicator"
 				className={"player" + (playerOneIsNext ? "-one" : "-two")}
 			>
-				Player {playerOneIsNext ? "1" : "2"}'s turn
+				Player {playerOneIsNext ? "1" : "2"}
+				{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
 			</div>
 			<Board
 				chompedSquares={chompedSquares}
@@ -145,4 +146,15 @@ function Square({
 			)}
 		</div>
 	);
+}
+
+function isGameOver(matrix) {
+	for (let i = 0; i < matrix.length; i++) {
+		for (let j = 0; j < matrix[i].length; j++) {
+			if (matrix[i][j] !== 1) {
+				return false;
+			}
+		}
+	}
+	return true;
 }
