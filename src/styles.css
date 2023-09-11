@@ -19,6 +19,16 @@ body {
 	background-color: hsl(10, 26%, 86%);
 }
 
+h1 {
+	color: hsl(10, 59%, 19%);
+}
+
+#chomp-rules {
+	margin-block: 1rem;
+	padding-left: 1.125rem;
+	color: hsl(10, 59%, 12%);
+}
+
 #nextTurnIndicator {
 	width: fit-content;
 	margin-bottom: 0.5rem;

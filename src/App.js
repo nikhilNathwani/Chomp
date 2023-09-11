@@ -71,6 +71,25 @@ export default function Level() {
 
 	return (
 		<React.Fragment>
+			<h1>Chomp!</h1>
+			<ol id="chomp-rules">
+				<li>It's you (Player 1) vs. the computer (Player 2).</li>
+
+				<li>
+					Take turns "chomping" a square of chocolate from the bar
+				</li>
+				<li>
+					With each chomp, all squares below and to the right are also
+					eaten
+				</li>
+				<li>
+					The goal is to avoid the "poison" square. If Player 2 chomps
+					it, you win!
+				</li>
+				{/* <li>
+					You win if Player 2 chomps the "poison" square (top-left)!
+				</li> */}
+			</ol>
 			<div
 				id="nextTurnIndicator"
 				className={"player" + (playerOneIsNext ? "-one" : "-two")}
