@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { squareState } from "./constants";
+import Square from "./components/Square";
 
 //Current goal:
 //- Declare winner
@@ -7,11 +9,6 @@ import { useState } from "react";
 
 const numRows = 4;
 const numColumns = 5;
-const squareState = {
-	NOT_CHOMPED: 0,
-	CHOMPED: 1,
-	BLAST_ZONE: 2,
-};
 
 export default function Level() {
 	const [chompedSquares, setChompedSquares] = useState(
@@ -132,39 +129,6 @@ function Board({ chompedSquares, isPlayerOneNext, onChomp, onHoverChange }) {
 		</div>
 	));
 	return board;
-}
-
-function Square({
-	row,
-	col,
-	state,
-	isPoison,
-	onSquareClick,
-	onSquareHoverChange,
-}) {
-	return (
-		<div
-			className={
-				"square " +
-				(state === squareState.CHOMPED
-					? "chomped"
-					: state === squareState.BLAST_ZONE
-					? "not-chomped blast-zone"
-					: "not-chomped")
-			}
-			onClick={onSquareClick}
-			onMouseEnter={() => {
-				onSquareHoverChange(row, col, true);
-			}}
-			onMouseLeave={() => {
-				onSquareHoverChange(row, col, false);
-			}}
-		>
-			{isPoison && (
-				<i className="fa-solid fa-skull-crossbones fa-2xl"></i>
-			)}
-		</div>
-	);
 }
 
 function isGameOver(matrix) {
