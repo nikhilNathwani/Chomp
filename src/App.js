@@ -69,7 +69,10 @@ export default function Level() {
 		<React.Fragment>
 			<h1>Chomp!</h1>
 			<ol id="chomp-rules">
-				<li>It's you (Player 1) vs. the computer (Player 2).</li>
+				<li>
+					It's you (Player 1) vs. the computer (Player 2) (tbd.. for
+					now you control both players).
+				</li>
 
 				<li>
 					Take turns "chomping" a square of chocolate from the bar
