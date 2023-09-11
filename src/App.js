@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { squareState } from "./constants";
-import Square from "./components/Square";
+import ChocolateBar from "./components/ChocolateBar";
 
 //Current goal:
-//- Declare winner
 //- Consider UI showing "Player 1" left-aligned & "Player 2" right-aligned, then toggle the color on/off (and maybe the text) to indicate whose turn it is
 
 const numRows = 4;
@@ -94,41 +93,14 @@ export default function Level() {
 				Player {playerOneIsNext ? "1" : "2"}
 				{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
 			</div>
-			<Board
+			<ChocolateBar
 				chompedSquares={chompedSquares}
 				isPlayerOneNext={playerOneIsNext}
 				onChomp={handleChomp}
 				onHoverChange={handleHoverChange}
-			></Board>
+			></ChocolateBar>
 		</React.Fragment>
 	);
-}
-
-function Board({ chompedSquares, isPlayerOneNext, onChomp, onHoverChange }) {
-	let board = chompedSquares.map((row, i) => (
-		<div
-			className={"board-row player-" + (isPlayerOneNext ? "one" : "two")}
-			key={i}
-		>
-			{row.map((squareState, j) => {
-				return (
-					<Square
-						row={i}
-						col={j}
-						state={squareState}
-						isPoison={i + j === 0}
-						onSquareClick={() => {
-							// console.log(`Clicked square at row ${i + 1}, column ${j + 1}`);
-							onChomp(i, j);
-						}}
-						onSquareHoverChange={onHoverChange}
-						key={(i + 1) * 10 + (j + 1)}
-					></Square>
-				);
-			})}
-		</div>
-	));
-	return board;
 }
 
 function isGameOver(matrix) {
