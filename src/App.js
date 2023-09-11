@@ -6,10 +6,11 @@ import ChocolateBar from "./components/ChocolateBar";
 //Current goal:
 //- Consider UI showing "Player 1" left-aligned & "Player 2" right-aligned, then toggle the color on/off (and maybe the text) to indicate whose turn it is
 
-const numRows = 4;
-const numColumns = 5;
+export default function Game() {
+	return <Level numRows={4} numColumns={5}></Level>;
+}
 
-export default function Level() {
+function Level({ numRows, numColumns }) {
 	const [chompedSquares, setChompedSquares] = useState(
 		Array.from({ length: numRows }, () =>
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
