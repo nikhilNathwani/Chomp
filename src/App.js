@@ -1,22 +1,53 @@
 import React from "react";
 import { useState } from "react";
 import { squareState } from "./constants";
+import HelpDialog from "./components/HelpDialog";
 import ChocolateBar from "./components/ChocolateBar";
 
 //Current goal:
 //- Consider UI showing "Player 1" left-aligned & "Player 2" right-aligned, then toggle the color on/off (and maybe the text) to indicate whose turn it is
 
-export default function Game() {
-	return <Level numRows={4} numColumns={5}></Level>;
-}
+let numRows = 4;
+let numColumns = 5;
 
-function Level({ numRows, numColumns }) {
+export default function Level() {
+	const [isHelpDialogOpen, setHelpDialogOpen] = useState(true);
 	const [chompedSquares, setChompedSquares] = useState(
 		Array.from({ length: numRows }, () =>
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
 		)
 	);
 	const [playerOneIsNext, setPlayerOneIsNext] = useState(true);
+
+	function replayGame() {
+		const nextSquares = Array.from({ length: numRows }, () =>
+			Array(numColumns).fill(squareState.NOT_CHOMPED)
+		);
+		setChompedSquares(nextSquares);
+		setPlayerOneIsNext(true);
+	}
+
+	function newGame() {
+		let currRows = numRows;
+		let currColumns = numColumns;
+		while (currRows === numRows && currColumns == numColumns) {
+			numRows = getRandom(4, 6);
+			numColumns = getRandom(numRows - 2, numRows + 2);
+		} //This loop ensures new board dimensions, no back-to-back repeat configuration
+		const nextSquares = Array.from({ length: numRows }, () =>
+			Array(numColumns).fill(squareState.NOT_CHOMPED)
+		);
+		setChompedSquares(nextSquares);
+		setPlayerOneIsNext(true);
+	}
+
+	function openHelpDialog() {
+		setHelpDialogOpen(true);
+	}
+
+	function closeHelpDialog() {
+		setHelpDialogOpen(false);
+	}
 
 	function handleChomp(row, col) {
 		let nextChompedSquares = chompedSquares.slice();
@@ -68,13 +99,9 @@ function Level({ numRows, numColumns }) {
 
 	return (
 		<React.Fragment>
+			<HelpDialog isOpen={isHelpDialogOpen} onClose={closeHelpDialog} />
 			<h1>Chomp!</h1>
 			<ol id="chomp-rules">
-				<li>
-					It's you (Player 1) vs. the computer (Player 2) (tbd.. for
-					now you control both players).
-				</li>
-
 				<li>
 					Take turns "chomping" a square of chocolate from the bar
 				</li>
@@ -83,12 +110,13 @@ function Level({ numRows, numColumns }) {
 					eaten
 				</li>
 				<li>
-					The goal is to avoid the "poison" square. If Player 2 chomps
-					it, you win!
+					The goal is to avoid the "poison" square marked with{" "}
+					<i className="fa-solid fa-skull-crossbones fa-s"></i>.
 				</li>
-				{/* <li>
-					You win if Player 2 chomps the "poison" square (top-left)!
-				</li> */}
+				<li>
+					If your opponent chomps the poison square, you win!
+					Otherwise... it's game over for you.
+				</li>
 			</ol>
 			<div
 				id="nextTurnIndicator"
@@ -97,6 +125,17 @@ function Level({ numRows, numColumns }) {
 				Player {playerOneIsNext ? "1" : "2"}
 				{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
 			</div>
+			{isGameOver(chompedSquares) && (
+				<React.Fragment>
+					<button onClick={replayGame}>
+						<i class="fa-solid fa-rotate-left"></i>
+						&nbsp;&nbsp;Replay
+					</button>
+					<button onClick={newGame}>
+						<i class="fa-solid fa-shuffle"></i>&nbsp;&nbsp;New Game
+					</button>
+				</React.Fragment>
+			)}
 			<ChocolateBar
 				chompedSquares={chompedSquares}
 				isPlayerOneNext={playerOneIsNext}
@@ -116,4 +155,8 @@ function isGameOver(matrix) {
 		}
 	}
 	return true;
+}
+
+function getRandom(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
