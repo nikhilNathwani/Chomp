@@ -103,20 +103,17 @@ export default function Level() {
 			<h1>Chomp!</h1>
 			<ol id="chomp-rules">
 				<li>
-					Take turns "chomping" a square of chocolate from the bar
+					Take turns "chomping" a square of chocolate from the bar.
 				</li>
 				<li>
 					With each chomp, all squares below and to the right are also
-					eaten
+					eaten.
 				</li>
 				<li>
 					The goal is to avoid the "poison" square marked with{" "}
 					<i className="fa-solid fa-skull-crossbones fa-s"></i>.
 				</li>
-				<li>
-					If your opponent chomps the poison square, you win!
-					Otherwise... it's game over for you.
-				</li>
+				<li>If your opponent chomps it, you win! Else... you lose!</li>
 			</ol>
 			<div
 				id="nextTurnIndicator"
