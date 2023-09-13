@@ -122,6 +122,12 @@ export default function Level() {
 				Player {playerOneIsNext ? "1" : "2"}
 				{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
 			</div>
+			<ChocolateBar
+				chompedSquares={chompedSquares}
+				isPlayerOneNext={playerOneIsNext}
+				onChomp={handleChomp}
+				onHoverChange={handleHoverChange}
+			></ChocolateBar>
 			{isGameOver(chompedSquares) && (
 				<React.Fragment>
 					<button onClick={replayGame}>
@@ -133,12 +139,6 @@ export default function Level() {
 					</button>
 				</React.Fragment>
 			)}
-			<ChocolateBar
-				chompedSquares={chompedSquares}
-				isPlayerOneNext={playerOneIsNext}
-				onChomp={handleChomp}
-				onHoverChange={handleHoverChange}
-			></ChocolateBar>
 		</React.Fragment>
 	);
 }

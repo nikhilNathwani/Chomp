@@ -29,5 +29,5 @@ export default function ChocolateBar({
 			})}
 		</div>
 	));
-	return chocolateBar;
+	return <div id="board">{chocolateBar}</div>;
 }
