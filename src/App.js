@@ -30,7 +30,7 @@ export default function Level() {
 	function newGame() {
 		let currRows = numRows;
 		let currColumns = numColumns;
-		while (currRows === numRows && currColumns == numColumns) {
+		while (currRows === numRows && currColumns === numColumns) {
 			numRows = getRandom(4, 6);
 			numColumns = getRandom(numRows - 2, numRows + 2);
 		} //This loop ensures new board dimensions, no back-to-back repeat configuration
@@ -41,9 +41,9 @@ export default function Level() {
 		setPlayerOneIsNext(true);
 	}
 
-	function openHelpDialog() {
-		setHelpDialogOpen(true);
-	}
+	// function openHelpDialog() {
+	// 	setHelpDialogOpen(true);
+	// }
 
 	function closeHelpDialog() {
 		setHelpDialogOpen(false);
