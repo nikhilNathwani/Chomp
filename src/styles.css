@@ -95,10 +95,11 @@ h1 {
 }
 
 #board {
-	/* width: min-content;
-	height: min-content; */
+	width: max(min-content, 300px);
+	height: max(min-content, 300px);
 	background-color: hsl(10, 26%, 68%);
 	box-shadow: inset 0 0 8px hsl(10, 59%, 19%);
+	position: relative;
 	/* border: 2px solid;
 	border-left-color: hsl(10, 59%, 19%);
 	border-top-color: hsl(10, 59%, 19%);
@@ -112,10 +113,8 @@ h1 {
 }
 
 .square {
-	/* width: min(80px, 15vmin);
-	height: min(80px, 15vmin); */
-	width: 8cqmin;
-	height: 8cqmin;
+	width: min(80px, 15vmin);
+	height: min(80px, 15vmin);
 
 	display: flex;
 	align-items: center;
@@ -187,11 +186,24 @@ i.fa-skull-crossbones {
 	margin-bottom: 1.5rem;
 }
 
+#nextGameButtons {
+	position: absolute; /* Position the buttons relative to the container */
+	text-align: center; /* Center the buttons horizontally */
+	top: 50%; /* Position the buttons 50% down from the top of the container */
+	left: 50%; /* Position the buttons 50% from the left of the container */
+	transform: translate(-50%, -50%); /* Center the buttons perfectly */
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
 button {
-	width: 170px;
+	width: calc(min(160px, 30vmin) - 15px);
 	height: 70px;
-	margin-top: 10px;
-	margin-right: 20px;
+	/* margin-top: 10px;
+	margin-right: 20px; */
 	font-size: 1.25rem;
 	background-color: hsl(10, 59%, 31%);
 	border: 4px solid;
