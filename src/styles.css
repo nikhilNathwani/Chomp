@@ -26,11 +26,11 @@ body {
 	margin-inline: auto;
 	/* padding-block: 0.5rem; */
 	display: grid;
-	/* grid-template-rows: min-content max(1fr, 90vmin) min-content; */
+	grid-template-rows: min-content 1fr min-content;
 }
 
 #header {
-	height: min-content;
+	/* height: min-content; */
 	padding-block: 1rem;
 	/* border-top: 5px double hsl(10, 26%, 56%); */
 	border-bottom: 5px double hsl(10, 26%, 56%);
@@ -120,7 +120,7 @@ h1 {
 	justify-content: center;
 
 	/* background-color: hsl(10, 59%, 31%); */
-	background-color: turquoise;
+	background-color: orange;
 	border: 4px solid;
 	border-left-color: hsl(10, 59%, 44%);
 	border-top-color: hsl(10, 59%, 44%);
