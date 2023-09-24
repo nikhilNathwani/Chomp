@@ -20,18 +20,19 @@ body {
 
 #root {
 	width: min(800px, 100vw);
-	height: calc(100vh - 1rem);
+	height: 100vh;
 	border-left: 5px double hsl(10, 26%, 56%);
 	border-right: 5px double hsl(10, 26%, 56%);
 	margin-inline: auto;
-	margin-block: 0.5rem;
+	/* padding-block: 0.5rem; */
 	display: grid;
-	grid-template-rows: min-content max(1fr, 90vmin) min-content;
+	/* grid-template-rows: min-content max(1fr, 90vmin) min-content; */
 }
 
 #header {
+	height: min-content;
 	padding-block: 1rem;
-	border-top: 5px double hsl(10, 26%, 56%);
+	/* border-top: 5px double hsl(10, 26%, 56%); */
 	border-bottom: 5px double hsl(10, 26%, 56%);
 	text-align: center;
 }
@@ -39,7 +40,7 @@ body {
 #rules {
 	padding: 1rem;
 	border-top: 5px double hsl(10, 26%, 56%);
-	border-bottom: 5px double hsl(10, 26%, 56%);
+	/* border-bottom: 5px double hsl(10, 26%, 56%); */
 	/* text-align: center; */
 }
 
