@@ -103,43 +103,49 @@ export default function Level() {
 			<div id="header">
 				<h1>CHOMP!</h1>
 			</div>
-			<div id="game">
-				<div
-					id="nextTurnIndicator"
-					className={"player" + (playerOneIsNext ? "-one" : "-two")}
-				>
-					Player {playerOneIsNext ? "1" : "2"}
-					{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
+			<div id="chompApp">
+				<div id="game">
+					<div
+						id="nextTurnIndicator"
+						className={
+							"player" + (playerOneIsNext ? "-one" : "-two")
+						}
+					>
+						Player {playerOneIsNext ? "1" : "2"}
+						{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
+					</div>
+					<ChocolateBar
+						chompedSquares={chompedSquares}
+						isPlayerOneNext={playerOneIsNext}
+						isGameOver={isGameOver(chompedSquares)}
+						onChomp={handleChomp}
+						onHoverChange={handleHoverChange}
+						onReplayGame={replayGame}
+						onNewGame={newGame}
+					></ChocolateBar>
 				</div>
-				<ChocolateBar
-					chompedSquares={chompedSquares}
-					isPlayerOneNext={playerOneIsNext}
-					isGameOver={isGameOver(chompedSquares)}
-					onChomp={handleChomp}
-					onHoverChange={handleHoverChange}
-					onReplayGame={replayGame}
-					onNewGame={newGame}
-				></ChocolateBar>
-			</div>
-			<div id="rules">
-				<h2>How to play:</h2>
-				<ol id="chomp-rules">
-					<li>
-						Take turns "chomping" a square of chocolate from the
-						bar.
-					</li>
-					<li>
-						With each chomp, all squares below and to the right are
-						also eaten.
-					</li>
-					<li>
-						The goal is to avoid the "poison" square marked with{" "}
-						<i className="fa-solid fa-skull-crossbones fa-s"></i>.
-					</li>
-					<li>
-						If your opponent chomps it, you win! Else... you lose!
-					</li>
-				</ol>
+				<div id="rules">
+					<h2>How to play:</h2>
+					<ol id="chomp-rules">
+						<li>
+							Take turns "chomping" a square of chocolate from the
+							bar.
+						</li>
+						<li>
+							With each chomp, all squares below and to the right
+							are also eaten.
+						</li>
+						<li>
+							The goal is to avoid the "poison" square marked with{" "}
+							<i className="fa-solid fa-skull-crossbones fa-s"></i>
+							.
+						</li>
+						<li>
+							If your opponent chomps it, you win! Else... you
+							lose!
+						</li>
+					</ol>
+				</div>
 			</div>
 		</React.Fragment>
 	);

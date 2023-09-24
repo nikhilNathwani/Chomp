@@ -21,16 +21,17 @@ body {
 #root {
 	width: min(800px, 100vw);
 	height: 100vh;
+	height: 100dvh;
 	border-left: 5px double hsl(10, 26%, 56%);
 	border-right: 5px double hsl(10, 26%, 56%);
 	margin-inline: auto;
 	/* padding-block: 0.5rem; */
-	display: grid;
-	grid-template-rows: min-content max(1fr, 200vmin) min-content;
+	display: flex;
+	flex-flow: column nowrap;
 }
 
 #header {
-	/* height: min-content; */
+	height: min-content;
 	padding-block: 1rem;
 	/* border-top: 5px double hsl(10, 26%, 56%); */
 	border-bottom: 5px double hsl(10, 26%, 56%);
@@ -45,6 +46,7 @@ body {
 }
 
 #game {
+	height: calc(6 * min(80px, 15vmin) + 3rem + min(80px, 15vmin));
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
