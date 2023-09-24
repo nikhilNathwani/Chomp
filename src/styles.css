@@ -95,8 +95,8 @@ h1 {
 }
 
 #board {
-	width: min-content;
-	height: min-content;
+	/* width: min-content;
+	height: min-content; */
 	background-color: hsl(10, 26%, 68%);
 	box-shadow: inset 0 0 8px hsl(10, 59%, 19%);
 	/* border: 2px solid;
@@ -112,8 +112,10 @@ h1 {
 }
 
 .square {
-	width: min(80px, 15vmin);
-	height: min(80px, 15vmin);
+	/* width: min(80px, 15vmin);
+	height: min(80px, 15vmin); */
+	width: 8cqmin;
+	height: 8cqmin;
 
 	display: flex;
 	align-items: center;
