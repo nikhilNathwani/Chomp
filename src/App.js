@@ -128,7 +128,7 @@ export default function Level() {
 					<h2>How to play:</h2>
 					<ol id="chomp-rules">
 						<li>
-							Take turns "chomping" a square of chocolate from the
+							Take turns "chomping" a square from the chocolate
 							bar.
 						</li>
 						<li>

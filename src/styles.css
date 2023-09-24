@@ -202,8 +202,8 @@ i.fa-skull-crossbones {
 }
 
 button {
-	width: calc(2 * min(80px, 15vmin) - 12px);
-	height: calc(min(80px, 15vmin) - 16px);
+	width: calc(2 * min(80px, 15vmin) - 11px);
+	height: calc(min(80px, 15vmin) - 11px);
 	/* margin-top: 10px;
 	margin-right: 20px; */
 	font-size: 1.25rem;
