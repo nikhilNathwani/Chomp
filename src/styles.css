@@ -111,7 +111,7 @@ h1 {
 }
 
 .square {
-	width: 80px;
+	width: min(80px, 10vmin);
 	height: 80px;
 	border: 1px solid black;
 
