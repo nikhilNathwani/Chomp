@@ -202,7 +202,7 @@ i.fa-skull-crossbones {
 }
 
 button {
-	width: calc(2 * min(80px, 15vmin) - 11px);
+	width: calc(2 * min(80px, 15vmin) - 10px);
 	height: calc(min(80px, 15vmin) - 11px);
 	/* margin-top: 10px;
 	margin-right: 20px; */
