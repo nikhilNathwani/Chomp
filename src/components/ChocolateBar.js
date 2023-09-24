@@ -23,7 +23,7 @@ export default function ChocolateBar({
 					</button>
 					<button onClick={onNewGame}>
 						<i class="fa-solid fa-shuffle"></i>
-						&nbsp;&nbsp;New Game
+						&nbsp;&nbsp;Random
 					</button>
 				</div>
 			)}
