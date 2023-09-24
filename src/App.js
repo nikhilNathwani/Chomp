@@ -31,8 +31,8 @@ export default function Level() {
 		let currRows = numRows;
 		let currColumns = numColumns;
 		while (currRows === numRows && currColumns === numColumns) {
-			numRows = getRandom(4, 6);
-			numColumns = getRandom(numRows - 2, numRows + 2);
+			numColumns = getRandom(2, 6);
+			numRows = getRandom(2 + (numColumns === 2 ? 1 : 0), 6);
 		} //This loop ensures new board dimensions, no back-to-back repeat configuration
 		const nextSquares = Array.from({ length: numRows }, () =>
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
