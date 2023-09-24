@@ -111,15 +111,15 @@ h1 {
 }
 
 .square {
-	width: min(80px, 10vmin);
-	height: 80px;
-	border: 1px solid black;
+	width: min(80px, 15vmin);
+	height: min(80px, 15vmin);
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
-	background-color: hsl(10, 59%, 31%);
+	/* background-color: hsl(10, 59%, 31%); */
+	background-color: magenta;
 	border: 4px solid;
 	border-left-color: hsl(10, 59%, 44%);
 	border-top-color: hsl(10, 59%, 44%);
