@@ -100,45 +100,56 @@ export default function Level() {
 	return (
 		<React.Fragment>
 			<HelpDialog isOpen={isHelpDialogOpen} onClose={closeHelpDialog} />
-			<h1>Chomp!</h1>
-			<ol id="chomp-rules">
-				<li>
-					Take turns "chomping" a square of chocolate from the bar.
-				</li>
-				<li>
-					With each chomp, all squares below and to the right are also
-					eaten.
-				</li>
-				<li>
-					The goal is to avoid the "poison" square marked with{" "}
-					<i className="fa-solid fa-skull-crossbones fa-s"></i>.
-				</li>
-				<li>If your opponent chomps it, you win! Else... you lose!</li>
-			</ol>
-			<div
-				id="nextTurnIndicator"
-				className={"player" + (playerOneIsNext ? "-one" : "-two")}
-			>
-				Player {playerOneIsNext ? "1" : "2"}
-				{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
+			<div id="header">
+				<h1>CHOMP!</h1>
 			</div>
-			<ChocolateBar
-				chompedSquares={chompedSquares}
-				isPlayerOneNext={playerOneIsNext}
-				onChomp={handleChomp}
-				onHoverChange={handleHoverChange}
-			></ChocolateBar>
-			{isGameOver(chompedSquares) && (
-				<React.Fragment>
-					<button onClick={replayGame}>
-						<i class="fa-solid fa-rotate-left"></i>
-						&nbsp;&nbsp;Replay
-					</button>
-					<button onClick={newGame}>
-						<i class="fa-solid fa-shuffle"></i>&nbsp;&nbsp;New Game
-					</button>
-				</React.Fragment>
-			)}
+			<div id="game">
+				<div
+					id="nextTurnIndicator"
+					className={"player" + (playerOneIsNext ? "-one" : "-two")}
+				>
+					Player {playerOneIsNext ? "1" : "2"}
+					{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
+				</div>
+				<ChocolateBar
+					chompedSquares={chompedSquares}
+					isPlayerOneNext={playerOneIsNext}
+					onChomp={handleChomp}
+					onHoverChange={handleHoverChange}
+				></ChocolateBar>
+				{isGameOver(chompedSquares) && (
+					<React.Fragment>
+						<button onClick={replayGame}>
+							<i class="fa-solid fa-rotate-left"></i>
+							&nbsp;&nbsp;Replay
+						</button>
+						<button onClick={newGame}>
+							<i class="fa-solid fa-shuffle"></i>&nbsp;&nbsp;New
+							Game
+						</button>
+					</React.Fragment>
+				)}
+			</div>
+			<div id="rules">
+				<h2>How to play:</h2>
+				<ol id="chomp-rules">
+					<li>
+						Take turns "chomping" a square of chocolate from the
+						bar.
+					</li>
+					<li>
+						With each chomp, all squares below and to the right are
+						also eaten.
+					</li>
+					<li>
+						The goal is to avoid the "poison" square marked with{" "}
+						<i className="fa-solid fa-skull-crossbones fa-s"></i>.
+					</li>
+					<li>
+						If your opponent chomps it, you win! Else... you lose!
+					</li>
+				</ol>
+			</div>
 		</React.Fragment>
 	);
 }
