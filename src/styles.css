@@ -1,3 +1,17 @@
+:root {
+	--player-one-color: mediumblue;
+	--player-one-color-light: hsl(240, 100%, 70%);
+	--player-two-color: hsl(120, 100%, 35%);
+	--player-two-color-light: hsl(120, 61%, 85%);
+	--chocolate-color: hsl(10, 59%, 31%);
+	--chocolate-color-light: hsl(10, 59%, 44%);
+	--chocolate-color-dark: hsl(10, 59%, 19%);
+	--text-color-dark: hsl(10, 26%, 21%);
+	--text-color-accent: hsl(10, 26%, 56%);
+	--background-color-page: hsl(10, 26%, 86%);
+	--background-color-board: hsl(10, 26%, 68%);
+}
+
 *,
 *::before,
 *::after {
@@ -6,24 +20,17 @@
 	padding: 0;
 }
 
-:root {
-	--player-one-color: mediumblue;
-	--player-one-color-light: hsl(240, 100%, 70%);
-	--player-two-color: hsl(120, 100%, 35%);
-	--player-two-color-light: hsl(120, 61%, 85%);
-}
-
 body {
 	font-family: sans-serif;
-	background-color: hsl(10, 26%, 86%);
+	background-color: var(--background-color-page);
 }
 
 #root {
 	width: min(800px, 100vw);
 	height: 100vh;
 	height: 100dvh;
-	border-left: 5px double hsl(10, 26%, 56%);
-	border-right: 5px double hsl(10, 26%, 56%);
+	border-left: 5px double var(--text-color-accent);
+	border-right: 5px double var(--text-color-accent);
 	margin-inline: auto;
 	/* padding-block: 0.5rem; */
 	display: flex;
@@ -33,15 +40,15 @@ body {
 #header {
 	height: min-content;
 	padding-block: 1rem;
-	/* border-top: 5px double hsl(10, 26%, 56%); */
-	border-bottom: 5px double hsl(10, 26%, 56%);
+	/* border-top: 5px double var(--text-color-accent); */
+	border-bottom: 5px double var(--text-color-accent);
 	text-align: center;
 }
 
 #rules {
 	padding: 1rem;
-	border-top: 5px double hsl(10, 26%, 56%);
-	/* border-bottom: 5px double hsl(10, 26%, 56%); */
+	border-top: 5px double var(--text-color-accent);
+	/* border-bottom: 5px double var(--text-color-accent); */
 	/* text-align: center; */
 }
 
@@ -59,7 +66,7 @@ body {
 }
 
 #rules ol {
-	color: hsl(10, 26%, 21%);
+	color: var(--text-color-dark);
 	margin-block: 1rem;
 	padding-left: 1.125rem;
 }
@@ -72,7 +79,7 @@ body {
 h1,
 h2 {
 	font-family: "Lilita One";
-	color: hsl(10, 26%, 56%);
+	color: var(--text-color-accent);
 }
 
 h1 {
@@ -99,8 +106,8 @@ h1 {
 #board {
 	width: max(min-content, 300px);
 	height: max(min-content, 300px);
-	background-color: hsl(10, 26%, 68%);
-	box-shadow: inset 0 0 8px hsl(10, 59%, 19%);
+	background-color: var(--background-color-board);
+	box-shadow: inset 0 0 8px var(--chocolate-color-dark);
 	position: relative;
 	/* border: 2px solid;
 	border-left-color: hsl(10, 59%, 19%);
@@ -122,13 +129,13 @@ h1 {
 	align-items: center;
 	justify-content: center;
 
-	/* background-color: hsl(10, 59%, 31%); */
-	background-color: turquoise;
+	background-color: var(--chocolate-color);
+	/* background-color: rgb(8, 10, 10); */
 	border: 4px solid;
-	border-left-color: hsl(10, 59%, 44%);
-	border-top-color: hsl(10, 59%, 44%);
-	border-right-color: hsl(10, 59%, 19%);
-	border-bottom-color: hsl(10, 59%, 19%);
+	border-left-color: var(--chocolate-color-light);
+	border-top-color: var(--chocolate-color-light);
+	border-right-color: var(--chocolate-color-dark);
+	border-bottom-color: var(--chocolate-color-dark);
 }
 
 .chomped {
@@ -150,13 +157,9 @@ h1 {
 	background-color: var(--player-two-color);
 }
 
-i.fa-skull-crossbones {
+.square i {
 	color: white;
 	/* color: hsl(10, 59%, 9%); */
-}
-
-#chomp-rules i {
-	color: hsl(10, 59%, 12%);
 }
 
 #helpDialog {
@@ -175,7 +178,7 @@ i.fa-skull-crossbones {
 .help-content {
 	width: 600px;
 	height: 80%;
-	color: hsl(10, 59%, 12%);
+	color: var(--text-color-dark);
 	font-size: 1.5rem;
 	background-color: white;
 	padding: 20px;
@@ -207,12 +210,12 @@ button {
 	/* margin-top: 10px;
 	margin-right: 20px; */
 	font-size: 1.2rem;
-	background-color: hsl(10, 59%, 31%);
+	background-color: var(--chocolate-color);
 	border: 4px solid;
-	border-left-color: hsl(10, 59%, 44%);
-	border-top-color: hsl(10, 59%, 44%);
-	border-right-color: hsl(10, 59%, 19%);
-	border-bottom-color: hsl(10, 59%, 19%);
+	border-left-color: var(--chocolate-color-light);
+	border-top-color: var(--chocolate-color-light);
+	border-right-color: var(--chocolate-color-dark);
+	border-bottom-color: var(--chocolate-color-dark);
 	color: white;
 	border-radius: 8px;
 	cursor: pointer;
