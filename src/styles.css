@@ -1,3 +1,6 @@
+/* ----------------------------------------- */
+/* --- STYLE VARIBLES ---------------------- */
+/* ----------------------------------------- */
 :root {
 	--font-size-xl: 3rem;
 	--font-size-large: 2rem;
@@ -19,6 +22,9 @@
 	--player-two-color-light: hsl(6, 90%, 85%);
 }
 
+/* ----------------------------------------- */
+/* --- BASIC SET-UP ------------------------ */
+/* ----------------------------------------- */
 *,
 *::before,
 *::after {
@@ -27,11 +33,29 @@
 	padding: 0;
 }
 
+h1,
+h2,
+li::marker {
+	font-family: "Lilita One";
+	color: var(--text-color-accent);
+}
+
+h1 {
+	font-size: var(--font-size-xl);
+}
+
+h2 {
+	font-size: var(--font-size-large);
+}
+
 body {
 	font-family: sans-serif;
 	background-color: var(--background-color-page);
 }
 
+/* ----------------------------------------- */
+/* --- PAGE LAYOUT ------------------------- */
+/* ----------------------------------------- */
 #root {
 	width: min(800px, 100vw);
 	height: 100vh;
@@ -62,39 +86,9 @@ body {
 	border: 5px double var(--text-color-accent);
 }
 
-#rules > h2 {
-	font-size: var(--font-size-large);
-	text-align: center;
-}
-
-#rules ol {
-	color: var(--text-color-dark);
-	margin-top: 1rem;
-	padding-left: 1.125rem;
-}
-
-#rules li::marker {
-	font-family: "Lilita One";
-	/* font-weight: bold; */
-	color: var(--text-color-accent);
-}
-
-#rules li {
-	font-size: var(--font-size-base);
-	line-height: 1.75;
-	padding-left: 0.5rem;
-}
-
-h1,
-h2 {
-	font-family: "Lilita One";
-	color: var(--text-color-accent);
-}
-
-h1 {
-	font-size: var(--font-size-xl);
-}
-
+/* ----------------------------------------- */
+/* --- SECTION: NEXT TURN INDICATOR--------- */
+/* ----------------------------------------- */
 #nextTurnIndicator {
 	font-size: var(--font-size-base);
 	font-weight: bold;
@@ -114,17 +108,15 @@ h1 {
 	background-color: var(--player-two-color);
 }
 
+/* ----------------------------------------- */
+/* --- SECTION: CHOCOLATE BAR -------------- */
+/* ----------------------------------------- */
 #board {
 	width: max(min-content, 300px);
 	height: max(min-content, 300px);
 	background-color: var(--background-color-board);
 	box-shadow: inset 0 0 8px var(--chocolate-color-dark);
 	position: relative;
-	/* border: 2px solid;
-	border-left-color: hsl(10, 59%, 19%);
-	border-top-color: hsl(10, 59%, 19%);
-	border-right-color: hsl(10, 59%, 19%);
-	border-bottom-color: hsl(10, 59%, 19%); */
 }
 
 .board-row {
@@ -141,7 +133,6 @@ h1 {
 	justify-content: center;
 
 	background-color: var(--chocolate-color);
-	/* background-color: rgb(8, 10, 10); */
 	border: 4px solid;
 	border-left-color: var(--chocolate-color-light);
 	border-top-color: var(--chocolate-color-light);
@@ -170,38 +161,11 @@ h1 {
 
 .square i {
 	color: white;
-	/* color: hsl(10, 59%, 9%); */
 }
 
-#helpDialog {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 999; /* Adjust the z-index as needed to ensure the modal appears above other content */
-}
-
-.help-content {
-	width: 600px;
-	height: 80%;
-	color: var(--text-color-dark);
-	font-size: var(--font-size-base);
-	background-color: white;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-
-.help-content li {
-	margin-left: 1rem;
-	margin-bottom: 1.5rem;
-}
-
+/* ----------------------------------------- */
+/* --- SECTION: REPLAY / RANDOM ------------ */
+/* ----------------------------------------- */
 #nextGameButtons {
 	position: absolute; /* Position the buttons relative to the container */
 	text-align: center; /* Center the buttons horizontally */
@@ -232,6 +196,21 @@ button {
 	cursor: pointer;
 }
 
-.close-button {
+/* ----------------------------------------- */
+/* --- SECTION: RULES ---------------------- */
+/* ----------------------------------------- */
+#rules > h2 {
+	text-align: center;
+}
+
+#rules ol {
+	color: var(--text-color-dark);
+	margin-top: 1rem;
+	padding-left: 1.125rem;
+}
+
+#rules li {
 	font-size: var(--font-size-base);
+	line-height: 1.75;
+	padding-left: 0.5rem;
 }

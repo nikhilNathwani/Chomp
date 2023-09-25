@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { squareState } from "./constants";
-import HelpDialog from "./components/HelpDialog";
 import ChocolateBar from "./components/ChocolateBar";
 
 //Current goal:
@@ -11,7 +10,6 @@ let numRows = 4;
 let numColumns = 5;
 
 export default function Level() {
-	const [isHelpDialogOpen, setHelpDialogOpen] = useState(true);
 	const [chompedSquares, setChompedSquares] = useState(
 		Array.from({ length: numRows }, () =>
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
@@ -39,14 +37,6 @@ export default function Level() {
 		);
 		setChompedSquares(nextSquares);
 		setPlayerOneIsNext(true);
-	}
-
-	// function openHelpDialog() {
-	// 	setHelpDialogOpen(true);
-	// }
-
-	function closeHelpDialog() {
-		setHelpDialogOpen(false);
 	}
 
 	function handleChomp(row, col) {
@@ -99,7 +89,6 @@ export default function Level() {
 
 	return (
 		<React.Fragment>
-			<HelpDialog isOpen={isHelpDialogOpen} onClose={closeHelpDialog} />
 			<div id="header">
 				<h1>CHOMP!</h1>
 			</div>
