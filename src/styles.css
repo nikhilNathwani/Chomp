@@ -6,17 +6,17 @@
 	--text-color-dark: hsl(10, 26%, 21%);
 	--text-color-accent: hsl(10, 26%, 56%);
 
-	--background-color-page: hsl(10, 26%, 86%);
+	--background-color-page: hsl(9, 27%, 86%);
 	--background-color-board: hsl(10, 26%, 68%);
 
 	--chocolate-color: hsl(10, 59%, 31%);
 	--chocolate-color-light: hsl(10, 59%, 44%);
 	--chocolate-color-dark: hsl(10, 59%, 19%);
 
-	--player-one-color: mediumblue;
-	--player-one-color-light: hsl(240, 100%, 70%);
-	--player-two-color: hsl(120, 100%, 35%);
-	--player-two-color-light: hsl(120, 61%, 85%);
+	--player-one-color: hsl(179, 100%, 34%);
+	--player-one-color-light: hsl(179, 50%, 80%);
+	--player-two-color: hsl(6, 90%, 64%);
+	--player-two-color-light: hsl(6, 90%, 85%);
 }
 
 *,
