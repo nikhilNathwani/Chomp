@@ -97,6 +97,7 @@ h1 {
 
 #nextTurnIndicator {
 	font-size: var(--font-size-base);
+	font-weight: bold;
 	width: fit-content;
 	margin-bottom: 1rem;
 	padding-block: 0.5rem;
