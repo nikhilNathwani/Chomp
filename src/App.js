@@ -1,7 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { squareState } from "./constants";
+import Header from "./components/Header";
+import NextTurnIndicator from "./components/NextTurnIndicator";
 import ChocolateBar from "./components/ChocolateBar";
+import Rules from "./components/Rules";
 
 //Current goal:
 //- Consider UI showing "Player 1" left-aligned & "Player 2" right-aligned, then toggle the color on/off (and maybe the text) to indicate whose turn it is
@@ -9,7 +12,7 @@ import ChocolateBar from "./components/ChocolateBar";
 let numRows = 4;
 let numColumns = 5;
 
-export default function Level() {
+export default function App() {
 	const [chompedSquares, setChompedSquares] = useState(
 		Array.from({ length: numRows }, () =>
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
@@ -89,17 +92,12 @@ export default function Level() {
 
 	return (
 		<React.Fragment>
-			<div id="header">
-				<h1>CHOMP!</h1>
-			</div>
+			<Header></Header>
 			<div id="game">
-				<div
-					id="nextTurnIndicator"
-					className={"player" + (playerOneIsNext ? "-one" : "-two")}
-				>
-					Player {playerOneIsNext ? "1" : "2"}
-					{isGameOver(chompedSquares) ? " wins!" : "'s turn"}
-				</div>
+				<NextTurnIndicator
+					isPlayerOneNext={playerOneIsNext}
+					isGameOver={isGameOver(chompedSquares)}
+				></NextTurnIndicator>
 				<ChocolateBar
 					chompedSquares={chompedSquares}
 					isPlayerOneNext={playerOneIsNext}
@@ -110,25 +108,7 @@ export default function Level() {
 					onNewGame={newGame}
 				></ChocolateBar>
 			</div>
-			<div id="rules">
-				<h2>How to play:</h2>
-				<ol id="chomp-rules">
-					<li>
-						Take turns "chomping" a square from the chocolate bar.
-					</li>
-					<li>
-						With each chomp, all squares below and to the right are
-						also eaten.
-					</li>
-					<li>
-						The goal is to avoid the "poison" square marked with{" "}
-						<i className="fa-solid fa-skull-crossbones fa-s"></i>.
-					</li>
-					<li>
-						If your opponent chomps it, you win! Else... you lose!
-					</li>
-				</ol>
-			</div>
+			<Rules></Rules>
 		</React.Fragment>
 	);
 }
