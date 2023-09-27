@@ -34,15 +34,44 @@ export default function Game({ numRows, numColumns }) {
 		setPlayerOneIsNext(true);
 	}
 
-	function handleChomp(row, col) {
+	async function handleChomp(row, col) {
+		const overlay = document.getElementById("overlay");
+		overlay.style.display = "block"; // Show the overlay
+
+		console.log(`Chomping (${row}, ${col})`);
+		const maxRow = numRows - 1;
+		const maxCol = numColumns - 1;
+		const maxDistance = maxRow - row + (maxCol - col);
+		console.log(`Max distance: ${maxDistance}`);
+		for (let distance = 0; distance <= maxDistance; distance++) {
+			console.log(`Starting distance: ${distance}`);
+			chompByDistance(distance, row, col);
+			if (distance < maxDistance) {
+				await new Promise((resolve) => setTimeout(resolve, 100));
+			}
+		}
+		setPlayerOneIsNext(!playerOneIsNext);
+		overlay.style.display = "none"; // Hide the overlay when the loop is done
+	}
+
+	async function chompByDistance(distance, chompRow, chompCol) {
+		console.log(
+			"Entered chompByDistance function with distance",
+			distance,
+			"chompRow",
+			chompRow,
+			"chompCol",
+			chompCol
+		);
 		let nextChompedSquares = chompedSquares.slice();
-		for (let i = row; i < numRows; i++) {
-			for (let j = col; j < numColumns; j++) {
-				nextChompedSquares[i][j] = squareState.CHOMPED;
+		for (let i = chompRow; i < numRows; i++) {
+			let nextCol = chompCol + (distance - (i - chompRow));
+			if (i - chompRow <= distance && nextCol < numColumns) {
+				nextChompedSquares[i][nextCol] = squareState.CHOMPED;
+				console.log("Distance", distance, " chomping", i, nextCol);
 			}
 		}
 		setChompedSquares(nextChompedSquares);
-		setPlayerOneIsNext(!playerOneIsNext);
 	}
 
 	function handleHoverChange(row, col, isHoverOn) {

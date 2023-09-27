@@ -53,6 +53,17 @@ body {
 	background-color: var(--background-color-page);
 }
 
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+	z-index: 999; /* Ensure it's on top of everything */
+	display: none; /* Initially hidden */
+}
+
 /* ----------------------------------------- */
 /* --- PAGE LAYOUT ------------------------- */
 /* ----------------------------------------- */
@@ -183,7 +194,7 @@ button {
 	width: calc(2 * min(80px, 15vmin) - 10px);
 	height: calc(min(80px, 15vmin) - 11px);
 	/* margin-top: 10px;
-	margin-right: 20px; */
+    margin-right: 20px; */
 	font-size: var(--font-size-base);
 	background-color: var(--chocolate-color);
 	border: 4px solid;

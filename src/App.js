@@ -7,6 +7,7 @@ import Rules from "./components/Rules";
 export default function App() {
 	return (
 		<React.Fragment>
+			<div id="overlay"></div>
 			<Header></Header>
 			<Game numRows={initialRows} numColumns={initialColumns}></Game>
 			<Rules></Rules>
