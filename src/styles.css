@@ -58,8 +58,8 @@ body {
 /* ----------------------------------------- */
 #root {
 	width: min(800px, 100vw);
-	height: 100vh;
-	height: 100dvh;
+	/* height: 100vh;
+	height: 100dvh; */
 	margin-inline: auto;
 	display: flex;
 	flex-flow: column nowrap;
@@ -74,7 +74,9 @@ body {
 }
 
 #game {
-	height: calc(7 * min(80px, 15vmin) + 3rem);
+	height: calc(100vh - 10rem);
+	height: calc(100dvh - 10rem);
+	/* height: calc(7 * min(80px, 15vmin) + 3rem); */
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;

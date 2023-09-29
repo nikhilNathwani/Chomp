@@ -1,5 +1,5 @@
 import React from "react";
-import { initialColumns, initialRows } from "./constants";
+// import { initialColumns, initialRows } from "./constants";
 import Header from "./components/Header";
 import Game from "./components/Game";
 import Rules from "./components/Rules";
