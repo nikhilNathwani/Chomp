@@ -198,6 +198,13 @@ button {
 	cursor: pointer;
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+	button {
+		font-size: 1rem; /* Decrease font size for smaller screens */
+	}
+}
+
 /* ----------------------------------------- */
 /* --- SECTION: RULES ---------------------- */
 /* ----------------------------------------- */
