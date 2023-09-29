@@ -207,13 +207,6 @@ button {
 	}
 }
 
-.reset-hover {
-	/* Reset square hover styles to default values */
-	/* Fixing mobile bug where square under replay/random button gets auto-hovered */
-	background-color: initial;
-	color: initial;
-}
-
 /* ----------------------------------------- */
 /* --- SECTION: RULES ---------------------- */
 /* ----------------------------------------- */

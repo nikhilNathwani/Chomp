@@ -17,21 +17,11 @@ export default function ChocolateBar({
 		>
 			{isGameOver && (
 				<div id="nextGameButtons">
-					<button
-						onClick={() => {
-							onReplayGame();
-							resetSquares();
-						}}
-					>
+					<button onClick={onReplayGame}>
 						<i class="fa-solid fa-rotate-left"></i>
 						&nbsp;&nbsp;Replay
 					</button>
-					<button
-						onClick={() => {
-							onNewGame();
-							resetSquares();
-						}}
-					>
+					<button onClick={onNewGame}>
 						<i class="fa-solid fa-shuffle"></i>
 						&nbsp;&nbsp;Random
 					</button>
@@ -55,10 +45,4 @@ export default function ChocolateBar({
 		</div>
 	));
 	return <div id="board">{chocolateBar}</div>;
-}
-
-function resetSquares() {
-	document.querySelectorAll(".square").forEach((element) => {
-		element.classList.add("reset-hover");
-	});
 }
