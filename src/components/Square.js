@@ -23,7 +23,10 @@ export default function Square({
 			onTouchStart={() => {
 				onSquareHoverChange(row, col, true);
 			}}
-			onTouchEnd={onSquareClick}
+			onTouchEnd={(event) => {
+				event.preventDefault(); // Prevent the default touchend behavior
+				onSquareClick(); // Call your onTouchEnd logic
+			}}
 			onMouseEnter={() => {
 				onSquareHoverChange(row, col, true);
 			}}
