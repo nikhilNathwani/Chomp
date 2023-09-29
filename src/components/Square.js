@@ -20,6 +20,9 @@ export default function Square({
 					: "not-chomped")
 			}
 			onClick={onSquareClick}
+			onTouchStart={() => {
+				onSquareHoverChange(row, col, true);
+			}}
 			onTouchEnd={onSquareClick}
 			onMouseEnter={() => {
 				onSquareHoverChange(row, col, true);
