@@ -1,5 +1,5 @@
-export const initialRows = 4;
-export const initialColumns = 5;
+// export const initialRows = 4;
+// export const initialColumns = 5;
 
 export const squareState = {
 	NOT_CHOMPED: 0,

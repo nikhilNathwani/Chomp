@@ -8,7 +8,7 @@ export default function App() {
 	return (
 		<React.Fragment>
 			<Header></Header>
-			<Game numRows={initialRows} numColumns={initialColumns}></Game>
+			<Game></Game>
 			<Rules></Rules>
 		</React.Fragment>
 	);

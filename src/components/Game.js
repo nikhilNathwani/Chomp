@@ -4,7 +4,10 @@ import { squareState } from "../constants";
 import NextTurnIndicator from "./NextTurnIndicator";
 import ChocolateBar from "./ChocolateBar";
 
-export default function Game({ numRows, numColumns }) {
+let numRows = 4;
+let numColumns = 5;
+
+export default function Game() {
 	const [chompedSquares, setChompedSquares] = useState(
 		Array.from({ length: numRows }, () =>
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
