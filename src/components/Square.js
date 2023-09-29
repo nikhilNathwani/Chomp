@@ -28,7 +28,7 @@ export default function Square({
 				document.removeEventListener("touchstart");
 				setTimeout(() => {
 					document.addEventListener("touchstart");
-				}, 200);
+				}, 1000);
 			}}
 			onMouseEnter={() => {
 				onSquareHoverChange(row, col, true);
