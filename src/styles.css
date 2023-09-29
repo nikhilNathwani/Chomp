@@ -74,8 +74,8 @@ body {
 }
 
 #game {
-	height: calc(100vh - 10rem);
-	height: calc(100dvh - 10rem);
+	height: calc(100vh - 12rem);
+	/* height: calc(100dvh - 10rem); */
 	/* height: calc(7 * min(80px, 15vmin) + 3rem); */
 	display: flex;
 	flex-flow: column nowrap;
