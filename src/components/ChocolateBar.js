@@ -17,27 +17,11 @@ export default function ChocolateBar({
 		>
 			{isGameOver && (
 				<div id="nextGameButtons">
-					<button
-						onClick={onReplayGame}
-						onTouchStart={(event) => {
-							event.preventDefault();
-						}}
-						onTouchEnd={(event) => {
-							event.preventDefault();
-						}}
-					>
+					<button onClick={onReplayGame}>
 						<i class="fa-solid fa-rotate-left"></i>
 						&nbsp;&nbsp;Replay
 					</button>
-					<button
-						onClick={onNewGame}
-						onTouchStart={(event) => {
-							event.preventDefault();
-						}}
-						onTouchEnd={(event) => {
-							event.preventDefault();
-						}}
-					>
+					<button onClick={onNewGame}>
 						<i class="fa-solid fa-shuffle"></i>
 						&nbsp;&nbsp;Random
 					</button>
