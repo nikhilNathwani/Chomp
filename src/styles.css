@@ -140,6 +140,8 @@ body {
 	border-top-color: var(--chocolate-color-light);
 	border-right-color: var(--chocolate-color-dark);
 	border-bottom-color: var(--chocolate-color-dark);
+
+	cursor: pointer;
 }
 
 .chomped {

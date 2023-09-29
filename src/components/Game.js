@@ -33,10 +33,8 @@ export default function Game() {
 		const nextSquares = Array.from({ length: numRows }, () =>
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
 		);
-		setTimeout(() => {
-			setChompedSquares(nextSquares);
-			setPlayerOneIsNext(true);
-		}, 1000);
+		setChompedSquares(nextSquares);
+		setPlayerOneIsNext(true);
 	}
 
 	function handleChomp(row, col) {
