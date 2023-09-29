@@ -205,6 +205,9 @@ button {
 	button {
 		font-size: 1rem; /* Decrease font size for smaller screens */
 	}
+	*:hover {
+		pointer-events: none;
+	}
 }
 
 /* ----------------------------------------- */
