@@ -23,9 +23,13 @@ export default function Square({
 			onTouchStart={() => {
 				onSquareHoverChange(row, col, true);
 			}}
-			// onTouchEnd={() => {
-			// 	onSquareClick();
-			// }}
+			onTouchEnd={() => {
+				onSquareClick();
+				document.removeEventListener("touchstart");
+				setTimeout(() => {
+					document.addEventListener("touchstart");
+				}, 200);
+			}}
 			onMouseEnter={() => {
 				onSquareHoverChange(row, col, true);
 			}}
