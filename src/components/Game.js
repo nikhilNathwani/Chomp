@@ -36,7 +36,7 @@ export default function Game() {
 		setTimeout(() => {
 			setChompedSquares(nextSquares);
 			setPlayerOneIsNext(true);
-		}, 100);
+		}, 1000);
 	}
 
 	function handleChomp(row, col) {
