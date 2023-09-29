@@ -20,6 +20,9 @@ export default function Game() {
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
 		);
 		setChompedSquares(nextSquares);
+		document.querySelectorAll(".square").forEach((element) => {
+			element.classList.add("reset-hover");
+		});
 		setPlayerOneIsNext(true);
 	}
 
@@ -34,6 +37,9 @@ export default function Game() {
 			Array(numColumns).fill(squareState.NOT_CHOMPED)
 		);
 		setChompedSquares(nextSquares);
+		document.querySelectorAll(".square").forEach((element) => {
+			element.classList.add("reset-hover");
+		});
 		setPlayerOneIsNext(true);
 	}
 
