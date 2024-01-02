@@ -21,6 +21,7 @@ export default function Game() {
 		);
 		setChompedSquares(nextSquares);
 		setPlayerOneIsNext(true);
+		document.getElementById("game").click();
 	}
 
 	function newGame() {
@@ -35,6 +36,7 @@ export default function Game() {
 		);
 		setChompedSquares(nextSquares);
 		setPlayerOneIsNext(true);
+		document.getElementById("game").click();
 	}
 
 	function handleChomp(row, col) {
