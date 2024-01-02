@@ -4,8 +4,8 @@ import { squareState } from "../constants";
 import NextTurnIndicator from "./NextTurnIndicator";
 import ChocolateBar from "./ChocolateBar";
 
-let numRows = 3;
-let numColumns = 4;
+let numRows = 6;
+let numColumns = 5;
 
 export default function Game() {
 	const [chompedSquares, setChompedSquares] = useState(
@@ -21,7 +21,15 @@ export default function Game() {
 		);
 		setChompedSquares(nextSquares);
 		setPlayerOneIsNext(true);
-		document.getElementById("game").click();
+
+		document.getElementById("header").click();
+		document.getElementById("header").dispatchEvent(
+			new TouchEvent("touchstart", {
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			})
+		);
 	}
 
 	function newGame() {
@@ -36,7 +44,15 @@ export default function Game() {
 		);
 		setChompedSquares(nextSquares);
 		setPlayerOneIsNext(true);
-		document.getElementById("game").click();
+
+		document.getElementById("header").click();
+		document.getElementById("header").dispatchEvent(
+			new TouchEvent("touchstart", {
+				bubbles: true,
+				cancelable: true,
+				view: window,
+			})
+		);
 	}
 
 	function handleChomp(row, col) {
