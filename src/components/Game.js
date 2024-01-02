@@ -4,7 +4,7 @@ import { squareState } from "../constants";
 import NextTurnIndicator from "./NextTurnIndicator";
 import ChocolateBar from "./ChocolateBar";
 
-let numRows = 4;
+let numRows = 6;
 let numColumns = 5;
 
 export default function Game() {
