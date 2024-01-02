@@ -4,8 +4,8 @@ import { squareState } from "../constants";
 import NextTurnIndicator from "./NextTurnIndicator";
 import ChocolateBar from "./ChocolateBar";
 
-let numRows = 4;
-let numColumns = 5;
+let numRows = 3;
+let numColumns = 4;
 
 export default function Game() {
 	const [chompedSquares, setChompedSquares] = useState(
