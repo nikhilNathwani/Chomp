@@ -8,6 +8,7 @@ export default function Square({
 	isPoison,
 	onSquareClick,
 	onSquareHoverChange,
+	touchStarted = false,
 }) {
 	return (
 		<div
@@ -21,14 +22,27 @@ export default function Square({
 			}
 			onClick={onSquareClick}
 			onTouchStart={() => {
+				touchStarted = true;
 				onSquareHoverChange(row, col, true);
 			}}
 			onTouchEnd={() => {
 				onSquareClick();
+				touchStarted = false;
 				// document.removeEventListener("touchstart");
 				// setTimeout(() => {
 				// 	document.addEventListener("touchstart");
 				// }, 1000);
+			}}
+			onTouchCancel={(event) => {
+				if (touchStarted) {
+					onSquareHoverChange(row, col, false);
+					// Cancel the initial touchstart behavior
+					event.preventDefault();
+					event.stopPropagation();
+
+					// Reset the flag
+					touchStarted = false;
+				}
 			}}
 			onMouseEnter={() => {
 				onSquareHoverChange(row, col, true);
