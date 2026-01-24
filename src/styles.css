@@ -151,7 +151,7 @@ body {
 .player-one.board-row .square.blast-zone {
 	background-color: var(--player-one-color-light);
 }
-.player-one.board-row .square:hover {
+.player-one.board-row .square.blast-zone:hover {
 	background-color: var(--player-one-color);
 }
 
@@ -159,7 +159,7 @@ body {
 	background-color: var(--player-two-color-light);
 }
 
-.player-two.board-row .square:hover {
+.player-two.board-row .square.blast-zone:hover {
 	background-color: var(--player-two-color);
 }
 
