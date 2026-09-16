@@ -19,20 +19,20 @@ This project focuses on clean game-state transitions and immediate visual feedba
 ## Tech Stack
 
 - React 18
-- Create React App / react-scripts
+- Vite
 - Plain CSS
 
 ## Project Structure
 
 ```text
 src/
-  App.js                 # Top-level composition
-  constants.js           # Square state enums
+  App.jsx                 # Top-level composition
+  constants.js             # Square state enums
   components/
-    Game.js              # Core game logic and turn flow
-    ChocolateBar.js      # Board rendering and interactions
-    NextTurnIndicator.js # Status banner
-    Rules.js             # Rules panel
+    Game.jsx              # Core game logic and turn flow
+    ChocolateBar.jsx      # Board rendering and interactions
+    NextTurnIndicator.jsx # Status banner
+    Rules.jsx             # Rules panel
 ```
 
 ## Getting Started
@@ -42,14 +42,14 @@ npm install
 npm start
 ```
 
-App runs at http://localhost:3000.
+App runs at http://localhost:5173.
 
 ## Available Scripts
 
 ```bash
 npm start      # Run locally in dev mode
-npm test       # Run test runner
 npm run build  # Build production assets
+npm run preview # Preview the production build locally
 ```
 
 ## Gameplay Notes
