@@ -37,6 +37,8 @@ src/
 
 ## Getting Started
 
+Requires Node 24 (pinned in `.nvmrc`; fnm switches to it automatically).
+
 ```bash
 npm install
 npm start
