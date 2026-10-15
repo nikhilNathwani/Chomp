@@ -10,14 +10,14 @@ let numColumns = 5;
 export default function Game() {
 	const [chompedSquares, setChompedSquares] = useState(
 		Array.from({ length: numRows }, () =>
-			Array(numColumns).fill(squareState.NOT_CHOMPED)
-		)
+			Array(numColumns).fill(squareState.NOT_CHOMPED),
+		),
 	);
 	const [playerOneIsNext, setPlayerOneIsNext] = useState(true);
 
 	function replayGame() {
 		const nextSquares = Array.from({ length: numRows }, () =>
-			Array(numColumns).fill(squareState.NOT_CHOMPED)
+			Array(numColumns).fill(squareState.NOT_CHOMPED),
 		);
 		setChompedSquares(nextSquares);
 		setPlayerOneIsNext(true);
@@ -31,7 +31,7 @@ export default function Game() {
 			numRows = getRandom(2 + (numColumns === 2 ? 1 : 0), 6);
 		} //This loop ensures new board dimensions, no back-to-back repeat configuration
 		const nextSquares = Array.from({ length: numRows }, () =>
-			Array(numColumns).fill(squareState.NOT_CHOMPED)
+			Array(numColumns).fill(squareState.NOT_CHOMPED),
 		);
 		setChompedSquares(nextSquares);
 		setPlayerOneIsNext(true);

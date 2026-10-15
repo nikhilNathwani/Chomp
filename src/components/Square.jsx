@@ -17,8 +17,8 @@ export default function Square({
 				(state === squareState.CHOMPED
 					? "chomped"
 					: state === squareState.BLAST_ZONE
-					? "not-chomped blast-zone"
-					: "not-chomped")
+						? "not-chomped blast-zone"
+						: "not-chomped")
 			}
 			onClick={onSquareClick}
 			onTouchStart={() => {
