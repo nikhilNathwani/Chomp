@@ -6,15 +6,18 @@
 	--font-size-large: 2rem;
 	--font-size-base: 1.375rem;
 
-	--text-color-dark: hsl(10, 26%, 21%);
-	--text-color-accent: hsl(10, 26%, 56%);
+	--text-color-dark: hsl(20, 26%, 21%);
+	--text-color-accent: hsl(20, 26%, 47%);
 
-	--background-color-page: hsl(9, 27%, 86%);
-	--background-color-board: hsl(10, 26%, 68%);
+	--background-color-page: hsl(22, 24%, 88%);
+	--background-color-board: hsl(22, 24%, 70%);
 
-	--chocolate-color: hsl(10, 59%, 31%);
-	--chocolate-color-light: hsl(10, 59%, 44%);
-	--chocolate-color-dark: hsl(10, 59%, 19%);
+	--chocolate-color: hsl(20, 45%, 30%);
+	--chocolate-color-light: hsl(20, 45%, 35%);
+	--chocolate-color-dark: hsl(20, 45%, 24%);
+
+	/* Bevel on each chocolate piece: 8% of the square, so it scales with it. */
+	--chocolate-bevel: calc(min(80px, 15vmin) * 0.08);
 
 	--player-one-color: hsl(179, 100%, 34%);
 	--player-one-color-light: hsl(179, 50%, 80%);
@@ -135,7 +138,7 @@ body {
 	justify-content: center;
 
 	background-color: var(--chocolate-color);
-	border: 4px solid;
+	border: var(--chocolate-bevel) solid;
 	border-left-color: var(--chocolate-color-light);
 	border-top-color: var(--chocolate-color-light);
 	border-right-color: var(--chocolate-color-dark);
@@ -190,7 +193,7 @@ button {
 	margin-right: 20px; */
 	font-size: var(--font-size-base);
 	background-color: var(--chocolate-color);
-	border: 4px solid;
+	border: var(--chocolate-bevel) solid;
 	border-left-color: var(--chocolate-color-light);
 	border-top-color: var(--chocolate-color-light);
 	border-right-color: var(--chocolate-color-dark);
